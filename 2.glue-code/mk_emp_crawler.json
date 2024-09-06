@@ -1,0 +1,19 @@
+{
+    "Name": "employees",
+    "Role": "GlueDataEngineeringCertRole",
+    "DatabaseName": "raw_data",
+    "Targets": {
+        "S3Targets": [
+            {
+                "Path": "s3://data-engineering-course-2024-abc123xyz/rawData/employees_headers/"
+            }
+        ]
+    },
+    "SchemaChangePolicy": {
+        "UpdateBehavior": "UPDATE_IN_DATABASE",
+        "DeleteBehavior": "LOG"
+    },
+    "RecrawlPolicy": {
+        "RecrawlBehavior": "CRAWL_EVERYTHING"
+    }
+}
