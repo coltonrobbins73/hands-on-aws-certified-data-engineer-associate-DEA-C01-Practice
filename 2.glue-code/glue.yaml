@@ -3,7 +3,8 @@ Description:  This template deploys an AWS Glue Execution Role.
 Parameters:
   DataEngineeringS3Arn: 
     Description: Enter the ARN of the S3 bucket which was created during when the setup code was executed. 
-    Type: String  
+    Type: String
+    Default: arn:aws:s3:::data-engineering-course-2024-abc123xyz
 
 Resources:
     GlueIAMRole:

@@ -1,0 +1,5 @@
+{
+    "Name": "raw_data",
+    "Description": "Takes in raw data",
+    "LocationUri": "s3://data-engineering-course-2024-abc123xyz/rawData/"
+}

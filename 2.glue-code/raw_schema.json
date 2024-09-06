@@ -1,0 +1,48 @@
+{
+    "Name": "customers",
+    "Description": "Customer data from CSV file",
+    "TableType": "EXTERNAL_TABLE",
+    "Parameters": {
+      "classification": "csv",
+      "typeOfData": "file",
+      "delimiter": ",",
+      "skip.header.line.count": "1"
+    },
+    "StorageDescriptor": {
+      "Columns": [
+        {
+          "Name": "customerid",
+          "Type": "int"
+        },
+        {
+          "Name": "firstname",
+          "Type": "string"
+        },
+        {
+          "Name": "lastname",
+          "Type": "string"
+        },
+        {
+          "Name": "fullname",
+          "Type": "string"
+        }
+      ],
+      "Location": "s3://data-engineering-course-2024-abc123xyz/rawData/customers/",
+      "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+      "OutputFormat": "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat",
+      "Compressed": false,
+      "NumberOfBuckets": -1,
+      "SerdeInfo": {
+        "SerializationLibrary": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+        "Parameters": {
+          "field.delim": ","
+        }
+      },
+      "BucketColumns": [],
+      "SortColumns": [],
+      "Parameters": {
+        "classification": "csv"
+      },
+      "StoredAsSubDirectories": false
+    }
+  }
