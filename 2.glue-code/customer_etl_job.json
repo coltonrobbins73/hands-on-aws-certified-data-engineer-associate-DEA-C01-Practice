@@ -1,21 +1,22 @@
 {
-    "Name": "customer_etl_job",
-    "Role": "GlueDataEngineeringCertRole",
-    "Command": {
+  "Name": "customer_etl_job",
+  "Role": "GlueDataEngineeringCertRole",
+  "Command": {
       "Name": "glueetl",
-      "ScriptLocation": "s3://your-script-bucket/scripts/customer_etl.py",
+      "ScriptLocation": "s3://data-engineering-course-2024-abc123xyz/scriptLocation/etl_job.py",
       "PythonVersion": "3"
-    },
-    "DefaultArguments": {
+  },
+  "DefaultArguments": {
       "--source_database": "raw_data",
       "--source_table": "customers",
       "--target_path": "s3://data-engineering-course-2024-abc123xyz/processedData/customers_parquet/",
       "--target_database": "processed_data",
       "--target_table": "customers_parquet",
+      "--partition_column": "loadtime",
       "--job-language": "python",
       "--job-bookmark-option": "job-bookmark-enable"
-    },
-    "MaxRetries": 0,
-    "Timeout": 2880,
-    "MaxCapacity": 2
-  }
+  },
+  "MaxRetries": 0,
+  "Timeout": 2880,
+  "MaxCapacity": 2
+}
